@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #6a4c93;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+#posts-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.post-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.post-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.post-card p {
+  color: #555;
+}
+
+.post-card .author {
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 10px;
+}

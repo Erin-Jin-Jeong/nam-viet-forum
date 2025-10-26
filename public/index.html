@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nấm Việt — Diễn đàn</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./style.css">
+    <!-- Favicons -->
+    <link href="/hinh/mushroom1.png" rel="icon">
+    <link href="/hinh/apple-touch-icon.png" rel="apple-touch-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald-900': '#065F46',
+                        'emerald-700': '#047857',
+                        'emerald-500': '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen font-sans">
+
+    <div id="modal-backdrop" class="modal-backdrop fixed inset-0 hidden z-40"></div>
+
+
+    <header class="shadow-md fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center text-2xl font-bold text-emerald-700">
+                <img src="/hinh/mushroom1.png" alt="Nấm Việt Logo" class="w-7 h-7 me-2"> Nấm Việt
+            </a>
+
+            <div class="flex items-center space-x-2 md:space-x-4">
+
+                <span id="auth-greeting" class="hidden text-sm font-semibold text-emerald-700"></span>
+
+                <button id="btn-open-create"
+                    class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                    <i class="fa-solid fa-feather-pointed mr-2"></i>
+                    Đăng bài mới
+                </button>
+
+                <button id="btn-open-login" data-modal-target="modal-login"
+                    class="modal-trigger text-sm font-medium text-gray-500 hover:text-gray-700">Đăng nhập</button>
+
+                <button id="btn-open-register" data-modal-target="modal-register"
+                    class="modal-trigger text-sm font-medium text-white bg-emerald-600 px-3 py-1.5 rounded-md hover:bg-emerald-700">Đăng
+                    ký</button>
+
+                <button id="btn-logout"
+                    class="hidden text-sm font-medium text-red-600 hover:text-red-800 px-3 py-1.5 border border-red-300 rounded-md">Đăng
+                    xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- <header class="shadow-md fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+
+            <a href="#" class="flex items-center text-2xl font-bold text-emerald-700">
+                <img src="/hinh/mushroom1.png" alt="Nấm Việt Logo" class="w-7 h-7 me-2"> Nấm Việt
+            </a>
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <button id="btn-open-create"
+                    class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                    <i class="fa-solid fa-feather-pointed mr-2"></i>
+                    Đăng bài mới
+                </button>
+
+                <button id="btn-open-login" data-modal-target="modal-login"
+                    class="modal-trigger text-sm font-medium text-gray-500 hover:text-gray-700">Đăng nhập</button>
+
+                <button id="btn-open-register" data-modal-target="modal-register"
+                    class="modal-trigger text-sm font-medium text-white bg-emerald-600 px-3 py-1.5 rounded-md hover:bg-emerald-700">Đăng
+                    ký</button>
+
+                <button id="btn-logout"
+                    class="hidden text-sm font-medium text-red-600 hover:text-red-800 px-3 py-1.5 border border-red-300 rounded-md">Đăng
+                    xuất</button>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- <header class="shadow-md fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-emerald-700"><img src="/hinh/mushroom1.png" alt="Mushroom Logo"
+                    class="me-2" style="width: 10px; height: 10%;"> Mushroom</a>
+
+            <div class="flex items-center space-x-2 md:space-x-4">
+
+                <button id="btn-open-create"
+                    class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                    <i class="fa-solid fa-feather-pointed mr-2"></i>
+                    Đăng bài mới
+                </button>
+
+                <button id="btn-open-login" data-modal-target="modal-login"
+                    class="modal-trigger text-sm font-medium text-gray-500 hover:text-gray-700">Đăng nhập</button>
+
+                <button id="btn-open-register" data-modal-target="modal-register"
+                    class="modal-trigger text-sm font-medium text-white bg-emerald-600 px-3 py-1.5 rounded-md hover:bg-emerald-700">Đăng
+                    ký</button>
+
+                <button id="btn-logout"
+                    class="hidden text-sm font-medium text-red-600 hover:text-red-800 px-3 py-1.5 border border-red-300 rounded-md">Đăng
+                    xuất</button>
+            </div>
+        </div>
+    </header> -->
+
+    <main class="pt-20 pb-10 min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <aside class="md:col-span-1 space-y-6">
+                <div class="md:sticky md:top-24 space-y-6">
+
+                    <div class="block md:hidden">
+                        <input type="text" id="earchInput" placeholder="Tìm kiếm bài viết..."
+                            class="w-full p-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Danh mục</h2>
+                        <nav id="category-filter" class="space-y-1">
+                            <div class="category-item active" data-category="all">
+                                <i class="fa-solid fa-table-list mr-2 text-gray-500"></i>
+                                Tất cả bài viết
+                            </div>
+                            <div class="category-item" data-category="growing">
+                                <i class="fa-solid fa-seedling mr-2 text-green-600"></i>
+                                Chăm sóc
+                            </div>
+                            <div class="category-item" data-category="identification">
+                                <i class="fa-solid fa-microscope mr-2 text-blue-600"></i>
+                                Nhận Dạng
+                            </div>
+                            <div class="category-item" data-category="cooking">
+                                <i class="fa-solid fa-utensils mr-2 text-red-600"></i>
+                                Ẩm Thực
+                            </div>
+                            <div class="category-item" data-category="general">
+                                <i class="fa-solid fa-comments mr-2 text-yellow-600"></i>
+                                Thảo Luận Chung
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Thống kê</h2>
+                        <div class="text-sm space-y-2">
+                            <div>Tổng số bài viết: <span id="stat-posts" class="font-semibold text-emerald-600">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block md:hidden">
+                        <button id="btn-open-create-mobile"
+                            class="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                            <i class="fa-solid fa-feather-pointed mr-2"></i>
+                            Đăng bài mới
+                        </button>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- <aside class="md:col-span-1 space-y-6">
+                <div class="block md:hidden">
+                    <input type="text" id="earchInput" placeholder="Tìm kiếm bài viết..."
+                        class="w-full p-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow">
+                    <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Danh mục</h2>
+                    <nav id="category-filter" class="space-y-1">
+                        <div class="category-item active" data-category="all">
+                            <i class="fa-solid fa-table-list mr-2 text-gray-500"></i>
+                            Tất cả bài viết
+                        </div>
+                        <div class="category-item" data-category="growing">
+                            <i class="fa-solid fa-seedling mr-2 text-green-600"></i>
+                            Chăm sóc
+                        </div>
+                        <div class="category-item" data-category="identification">
+                            <i class="fa-solid fa-microscope mr-2 text-blue-600"></i>
+                            Nhận Dạng
+                        </div>
+                        <div class="category-item" data-category="cooking">
+                            <i class="fa-solid fa-utensils mr-2 text-red-600"></i>
+                            Ẩm Thực
+                        </div>
+                        <div class="category-item" data-category="general">
+                            <i class="fa-solid fa-comments mr-2 text-yellow-600"></i>
+                            Thảo Luận Chung
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow">
+                    <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Thống kê</h2>
+                    <div class="text-sm space-y-2">
+                        <div>Tổng số bài viết: <span id="stat-posts" class="font-semibold text-emerald-600">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block md:hidden">
+                    <button id="btn-open-create-mobile"
+                        class="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                        <i class="fa-solid fa-feather-pointed mr-2"></i>
+                        Đăng bài mới
+                    </button>
+                </div>
+
+            </aside> -->
+
+            <section class="md:col-span-3 space-y-6">
+
+                <div class="hidden md:block">
+                    <input type="text" id="desktopSearchInput" placeholder="Tìm kiếm bài viết..."
+                        class="w-full p-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                </div>
+
+                <div id="feed" class="space-y-5">
+                </div>
+
+                <div class="text-center pt-4">
+                    <button id="btn-load-more" class="
+            px-8 py-3 
+            font-semibold 
+            rounded-lg 
+            shadow-md 
+            text-white 
+            bg-emerald-600 
+            hover:bg-emerald-700 
+            hover:shadow-lg 
+            transition 
+            duration-300 
+            ease-in-out
+        ">
+                        Xem thêm
+                    </button>
+                </div>
+                <!-- <div class="text-center pt-4">
+                    <button id="btn-load-more"
+                        class="px-6 py-2 border border-emerald-500 text-emerald-600 rounded-full hover:bg-emerald-50 transition duration-150 ease-in-out">
+                        Xem thêm
+                    </button>
+                </div> -->
+            </section>
+        </div>
+    </main>
+
+
+    <div id="modal-login" class="fixed inset-0 hidden z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-sm p-6 relative">
+                <button class="modal-close absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="text-xl font-bold mb-4">Đăng nhập</h3>
+                <form id="form-login" class="space-y-4">
+                    <div>
+                        <label for="login-email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="login-email" name="email" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                    </div>
+                    <div>
+                        <label for="login-pass" class="block text-sm font-medium text-gray-700">Mật khẩu</label>
+                        <input type="password" id="login-pass" name="password" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                    </div>
+                    <button type="submit"
+                        class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700">
+                        Đăng nhập
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-register" class="fixed inset-0 hidden z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-sm p-6 relative">
+                <button class="modal-close absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="text-xl font-bold mb-4">Đăng ký</h3>
+                <form id="form-register" class="space-y-4">
+                    <div>
+                        <label for="reg-username" class="block text-sm font-medium text-gray-700">Tên người dùng</label>
+                        <input type="text" id="reg-username" name="username" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                    </div>
+                    <div>
+                        <label for="reg-email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="reg-email" name="email" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                    </div>
+                    <div>
+                        <label for="reg-pass" class="block text-sm font-medium text-gray-700">Mật khẩu</label>
+                        <input type="password" id="reg-pass" name="password" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                    </div>
+                    <button type="submit"
+                        class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700">
+                        Đăng ký
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-post" class="fixed inset-0 hidden z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl p-6 relative">
+                <button class="modal-close absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 id="modal-post-title" class="text-xl font-bold mb-4">Tạo bài viết</h3>
+                <form id="form-post" class="space-y-4">
+                    <div>
+                        <label for="post-title" class="block text-sm font-medium text-gray-700">Tiêu đề</label>
+                        <input type="text" id="post-title" name="title" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                    </div>
+                    <div>
+                        <label for="post-category" class="block text-sm font-medium text-gray-700">Danh mục</label>
+                        <select id="post-category" name="category" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                            <option value="growing">Chăm sóc</option>
+                            <option value="identification">Nhận Dạng</option>
+                            <option value="cooking">Ẩm Thực</option>
+                            <option value="general">Thảo Luận Chung</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="post-content" class="block text-sm font-medium text-gray-700">Nội dung</label>
+                        <textarea id="post-content" name="content" rows="6" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700">
+                        Lưu bài viết
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-6 right-6 hidden z-50">
+        <div id="toast-body" class="bg-gray-800 text-white px-4 py-2 rounded shadow"></div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backdrop = document.getElementById('modal-backdrop');
+
+            document.querySelectorAll('.modal-trigger').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const targetId = e.currentTarget.dataset.modalTarget;
+                    const modal = document.getElementById(targetId);
+                    modal.classList.remove('hidden');
+                    backdrop.classList.remove('hidden');
+                });
+            });
+
+            document.querySelectorAll('.modal-close').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const modal = btn.closest('[id^="modal-"]');
+                    modal.classList.add('hidden');
+                    backdrop.classList.add('hidden');
+                });
+            });
+
+            // Close all modals on backdrop click
+            backdrop.addEventListener('click', () => {
+                document.querySelectorAll('[id^="modal-"]').forEach(modal => modal.classList.add('hidden'));
+                backdrop.classList.add('hidden');
+            });
+        });
+
+        // Duplicate Create Button for Mobile (vì id="btn-open-create" đã dùng cho desktop)
+        document.getElementById('btn-open-create-mobile').addEventListener('click', () => {
+            document.getElementById('btn-open-create').click();
+        });
+    </script>
+</body>
+
+</html>
