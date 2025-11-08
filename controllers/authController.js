@@ -40,7 +40,7 @@ const loginUser = async (req, res) => {
     if (!user) return res.status(401).json({ message: "Email hoặc password không đúng" });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(401).json({ message: "Email hoặc password không đúng" });
+    if (!isMatch) return res.status(401).json({ message: "Password không đúng" });
 
     res.json({
       _id: user._id,

@@ -22,18 +22,7 @@ router.post("/", protect, async (req, res) => {
       category, // <== Đã thêm trường category
       author: req.user._id,
     });
-    // ... (phần còn lại giữ nguyên)
-    // router.post("/", protect, async (req, res) => {
-    //   try {
-    //     const { title, content } = req.body;
-    //     if (!title || !content)
-    //       return res.status(400).json({ message: "Thiếu tiêu đề hoặc nội dung" });
 
-    //     const post = await Post.create({
-    //       title,
-    //       content,
-    //       author: req.user._id,
-    //     });
 
     const populatedPost = await post.populate("author", "username email");
     res.status(201).json(populatedPost);
