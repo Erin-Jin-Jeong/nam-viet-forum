@@ -63,60 +63,6 @@
         </div>
     </header>
 
-    <!-- <header class="shadow-md fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-
-            <a href="#" class="flex items-center text-2xl font-bold text-emerald-700">
-                <img src="/hinh/mushroom1.png" alt="Nấm Việt Logo" class="w-7 h-7 me-2"> Nấm Việt
-            </a>
-            <div class="flex items-center space-x-2 md:space-x-4">
-                <button id="btn-open-create"
-                    class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
-                    <i class="fa-solid fa-feather-pointed mr-2"></i>
-                    Đăng bài mới
-                </button>
-
-                <button id="btn-open-login" data-modal-target="modal-login"
-                    class="modal-trigger text-sm font-medium text-gray-500 hover:text-gray-700">Đăng nhập</button>
-
-                <button id="btn-open-register" data-modal-target="modal-register"
-                    class="modal-trigger text-sm font-medium text-white bg-emerald-600 px-3 py-1.5 rounded-md hover:bg-emerald-700">Đăng
-                    ký</button>
-
-                <button id="btn-logout"
-                    class="hidden text-sm font-medium text-red-600 hover:text-red-800 px-3 py-1.5 border border-red-300 rounded-md">Đăng
-                    xuất</button>
-            </div>
-        </div>
-    </header> -->
-
-    <!-- <header class="shadow-md fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-emerald-700"><img src="/hinh/mushroom1.png" alt="Mushroom Logo"
-                    class="me-2" style="width: 10px; height: 10%;"> Mushroom</a>
-
-            <div class="flex items-center space-x-2 md:space-x-4">
-
-                <button id="btn-open-create"
-                    class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
-                    <i class="fa-solid fa-feather-pointed mr-2"></i>
-                    Đăng bài mới
-                </button>
-
-                <button id="btn-open-login" data-modal-target="modal-login"
-                    class="modal-trigger text-sm font-medium text-gray-500 hover:text-gray-700">Đăng nhập</button>
-
-                <button id="btn-open-register" data-modal-target="modal-register"
-                    class="modal-trigger text-sm font-medium text-white bg-emerald-600 px-3 py-1.5 rounded-md hover:bg-emerald-700">Đăng
-                    ký</button>
-
-                <button id="btn-logout"
-                    class="hidden text-sm font-medium text-red-600 hover:text-red-800 px-3 py-1.5 border border-red-300 rounded-md">Đăng
-                    xuất</button>
-            </div>
-        </div>
-    </header> -->
-
     <main class="pt-20 pb-10 min-h-screen">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6">
             <aside class="md:col-span-1 space-y-6">
@@ -172,55 +118,6 @@
                 </div>
             </aside>
 
-            <!-- <aside class="md:col-span-1 space-y-6">
-                <div class="block md:hidden">
-                    <input type="text" id="earchInput" placeholder="Tìm kiếm bài viết..."
-                        class="w-full p-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
-                </div>
-
-                <div class="bg-white p-5 rounded-lg shadow">
-                    <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Danh mục</h2>
-                    <nav id="category-filter" class="space-y-1">
-                        <div class="category-item active" data-category="all">
-                            <i class="fa-solid fa-table-list mr-2 text-gray-500"></i>
-                            Tất cả bài viết
-                        </div>
-                        <div class="category-item" data-category="growing">
-                            <i class="fa-solid fa-seedling mr-2 text-green-600"></i>
-                            Chăm sóc
-                        </div>
-                        <div class="category-item" data-category="identification">
-                            <i class="fa-solid fa-microscope mr-2 text-blue-600"></i>
-                            Nhận Dạng
-                        </div>
-                        <div class="category-item" data-category="cooking">
-                            <i class="fa-solid fa-utensils mr-2 text-red-600"></i>
-                            Ẩm Thực
-                        </div>
-                        <div class="category-item" data-category="general">
-                            <i class="fa-solid fa-comments mr-2 text-yellow-600"></i>
-                            Thảo Luận Chung
-                        </div>
-                    </nav>
-                </div>
-
-                <div class="bg-white p-5 rounded-lg shadow">
-                    <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Thống kê</h2>
-                    <div class="text-sm space-y-2">
-                        <div>Tổng số bài viết: <span id="stat-posts" class="font-semibold text-emerald-600">0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="block md:hidden">
-                    <button id="btn-open-create-mobile"
-                        class="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
-                        <i class="fa-solid fa-feather-pointed mr-2"></i>
-                        Đăng bài mới
-                    </button>
-                </div>
-
-            </aside> -->
 
             <section class="md:col-span-3 space-y-6">
 
@@ -249,12 +146,7 @@
                         Xem thêm
                     </button>
                 </div>
-                <!-- <div class="text-center pt-4">
-                    <button id="btn-load-more"
-                        class="px-6 py-2 border border-emerald-500 text-emerald-600 rounded-full hover:bg-emerald-50 transition duration-150 ease-in-out">
-                        Xem thêm
-                    </button>
-                </div> -->
+
             </section>
         </div>
     </main>
@@ -395,6 +287,66 @@
             document.getElementById('btn-open-create').click();
         });
     </script>
+
+
+    <footer class="bg-white border-t border-gray-200 mt-10">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+    
+    <!-- Logo + mô tả -->
+    <div>
+      <div class="flex items-center mb-3">
+        <img src="/hinh/mushroom1.png" alt="Nấm Việt" class="w-8 h-8 mr-2">
+        <span class="text-xl font-bold text-emerald-700">Nấm Việt</span>
+      </div>
+      <p class="text-sm text-gray-600">
+        Cộng đồng chia sẻ kiến thức, kinh nghiệm và niềm đam mê về thế giới nấm — từ nuôi trồng, nhận dạng đến ẩm thực.
+      </p>
+    </div>
+
+    <!-- Liên kết nhanh -->
+    <div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-3">Liên kết</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="hover:text-emerald-600 transition">Trang chủ</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition">Diễn đàn</a></li>
+        <li><a href="aboutus.html" class="hover:text-emerald-600 transition">Về chúng tôi</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition">Liên hệ</a></li>
+      </ul>
+    </div>
+
+    <!-- Chuyên mục -->
+    <div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-3">Chuyên mục</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="hover:text-emerald-600 transition"><i class="fa-solid fa-seedling mr-1 text-green-600"></i> Chăm sóc</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition"><i class="fa-solid fa-microscope mr-1 text-blue-600"></i> Nhận dạng</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition"><i class="fa-solid fa-utensils mr-1 text-red-600"></i> Ẩm thực</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition"><i class="fa-solid fa-comments mr-1 text-yellow-600"></i> Thảo luận chung</a></li>
+      </ul>
+    </div>
+
+    <!-- Liên hệ -->
+    <div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-3">Liên hệ</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><i class="fa-solid fa-envelope mr-2 text-emerald-600"></i> <a href="mailto:contact@namviet.vn" class="hover:text-emerald-600 transition">contact@namviet.vn</a></li>
+        <li><i class="fa-solid fa-phone mr-2 text-emerald-600"></i> +84 912 345 678</li>
+        <li><i class="fa-solid fa-location-dot mr-2 text-emerald-600"></i> TP. Hồ Chí Minh, Việt Nam</li>
+      </ul>
+      <div class="flex space-x-3 mt-3">
+        <a href="#" class="text-gray-500 hover:text-emerald-600 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-500 hover:text-emerald-600 transition"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="text-gray-500 hover:text-emerald-600 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="border-t border-gray-200 text-center py-4 text-sm text-gray-500 bg-gray-50">
+    © 2025 <span class="font-semibold text-emerald-700">Nấm Việt</span> — Diễn đàn dành cho người yêu nấm.  
+    <br class="md:hidden"> Thiết kế bởi <span class="text-emerald-600 font-medium">Soul & Jin</span>.
+  </div>
+</footer>
 </body>
 
 </html>
